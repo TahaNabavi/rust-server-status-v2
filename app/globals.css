@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.f-1 {
+  font-family: var(--font-one);
+}
+.f-2 {
+  font-family: var(--font-two);
+}
+.loading::after {
+  content: "";
+  animation: la 2s infinite;
+  font-family: var(--font-two);
+}
+
+@keyframes la {
+  0% {
+    content: "..";
+  }
+  10% {
+    content: "....";
+  }
+  20% {
+    content: ".....";
+  }
+  30% {
+    content: "......";
+  }
+  40% {
+    content: ".......";
+  }
+  50% {
+    content: "........";
+  }
+  60% {
+    content: ".........";
+  }
+  70% {
+    content: "..........";
+  }
+  80% {
+    content: "...........";
+  }
+  90% {
+    content: "............";
+  }
+  100% {
+    content: ".............";
+  }
+}
+
+.player-enter {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.player-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.player-exit {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.player-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.admin {
+  background: linear-gradient(270deg, #00ff0a, #ff7e00, #5500ff, #0081ff);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
