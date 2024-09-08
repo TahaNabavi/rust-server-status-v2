@@ -25,7 +25,11 @@ body {
     text-wrap: balance;
   }
 }
-
+.text-hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .f-1 {
   font-family: var(--font-one);
 }
