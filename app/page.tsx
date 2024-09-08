@@ -49,7 +49,7 @@ function PlayerCard({ data }: { data: Player }) {
             href={`https://steamcommunity.com/profiles/${data.SteamID}`}
             target="_blank"
             rel="noreferrer"
-            className="text-2xl text-white me-2"
+            className="text-2xl text-white me-2 text-hidden"
           >
             {data.Name}
           </a>
