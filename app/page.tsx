@@ -31,43 +31,44 @@ function PlayerCard({ data }: { data: Player }) {
 
   return (
     <div
-      className={`bg-gray-700 transition-all py-3 px-5 rounded-lg flex items-center space-x-4 w-full md:w-2/4 lg:w-2/6 border-4 border-white border-opacity-10
+      className={`bg-gray-700 transition-all py-3 px-2 rounded-lg flex items-center space-x-4 w-full md:w-2/4 lg:w-2/6 border-4 border-white border-opacity-10 relative
       ${
         isVisible
           ? " player-enter player-enter-active "
           : " player-exit player-exit-active "
       }
-      ${
-        data.Admin && " border-green-600 admin "
-      }`
-    }
+      ${data.Admin && " border-green-600 admin "}`}
     >
       {avatar && <img className="w-16 h-16 rounded-full" src={avatar} alt="" />}
-      <div>
-        <div className="flex items-center justify-center mb-2">
+      <div className="w-full text-hidden">
+        <div className="flex items-center justify-center mb-2 w-full">
           <a
             href={`https://steamcommunity.com/profiles/${data.SteamID}`}
             target="_blank"
             rel="noreferrer"
-            className="text-2xl text-white me-2 text-hidden w-full"
+            className="text-2xl text-white me-2 text-hidden"
           >
             {data.Name}
           </a>
           <div className="flex space-x-2 mt-1 mb-1">
-           {data.Admin ? <span className="text-green-600 py-2 px-3 bg-green-950 border-2 rounded-md border-green-800 text-xs uppercase f-2">
+            {data.Admin ? (
+              <span className="text-green-600 py-2 px-3 bg-green-950 border-2 rounded-md border-green-800 text-xs uppercase f-2">
                 Admin
-              </span>:<>
-            {data.VIP && (
-              <span className="text-yellow-500 py-2 px-3 bg-yellow-500 bg-opacity-10 border-2 rounded-md border-yellow-300 text-xs uppercase f-2">
-                VIP
               </span>
+            ) : (
+              <>
+                {data.VIP && (
+                  <span className="text-yellow-500 py-2 px-3 bg-yellow-500 bg-opacity-10 border-2 rounded-md border-yellow-300 text-xs uppercase f-2">
+                    VIP
+                  </span>
+                )}
+                {data.Prem && (
+                  <span className="text-purple-300 py-2 px-3 bg-purple-500 bg-opacity-10 border-2 rounded-md border-purple-300 text-xs uppercase f-2">
+                    Premium
+                  </span>
+                )}
+              </>
             )}
-            {data.Prem && (
-              <span className="text-purple-300 py-2 px-3 bg-purple-500 bg-opacity-10 border-2 rounded-md border-purple-300 text-xs uppercase f-2">
-                Premium
-              </span>
-            )}
-           </>}
           </div>
         </div>
         <div className="text-white f-2">
