@@ -25,6 +25,9 @@ body {
     text-wrap: balance;
   }
 }
+* {
+  color:white;
+}
 .text-hidden {
   white-space: nowrap;
   overflow: hidden;
